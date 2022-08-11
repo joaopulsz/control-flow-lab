@@ -16,7 +16,7 @@ public class SecretNumber {
 
         System.out.println("Guess the secret number between 1 and 10 to win the game");
 
-    //Create a loop that keeps the programme running until the user guesses right
+        //Create a loop that keeps the programme running until the user guesses right
         while (!victory) {
 
             //Prompt user to input their guess

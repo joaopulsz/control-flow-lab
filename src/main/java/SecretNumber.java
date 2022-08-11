@@ -27,8 +27,10 @@ public class SecretNumber {
             if (secretNum == parseInt(usersGuess)) {
                 victory = true;
                 System.out.println("Congratulations, you win the game!");
+            } else if (secretNum > parseInt(usersGuess)) {
+                System.out.println("Not quite, your guess was too low. Please, try again.");
             } else {
-                System.out.println("Not quite. Please, try again.");
+                System.out.println("Not quite, your guess was too high. Please, try again.");
             }
 
         }

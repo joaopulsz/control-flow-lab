@@ -16,38 +16,43 @@ public class WhatShouldIWear {
         String weatherCondition = reader2.nextLine();
 
         //Suggest what to wear
-        if (parseInt(temperature) >= 30) {
-            if (weatherCondition.equals("clear")) {
-                System.out.println("Swimming suit and flip-flops, go out and enjoy. Otherwise, find somewhere with AC.");
-            } else if (weatherCondition.equals("rain")) {
-                System.out.println("Shorts and a T-shirt will do it, but don't forget your umbrella.");
-            } else {
-                System.out.println("It's probably the end of the world. So long, human.");
-            }
+        if (weatherCondition.equals("clear") || weatherCondition.equals("rain") || weatherCondition.equals("snow")) {
+            if (parseInt(temperature) >= 30) {
+                if (weatherCondition.equals("clear")) {
+                    System.out.println("Swimming suit and flip-flops, go out and enjoy. Otherwise, find somewhere with AC.");
+                } else if (weatherCondition.equals("rain")) {
+                    System.out.println("Shorts and a T-shirt will do it, but don't forget your umbrella.");
+                } else {
+                    System.out.println("It's probably the end of the world. So long, human.");
+                }
 
-        } else if (parseInt(temperature) >= 20 && parseInt(temperature) < 30) {
-            if (weatherCondition.equals("clear")) {
-                System.out.println("You should be fine with just a shirt or a T-shirt.");
-            } else if (weatherCondition.equals("rain")) {
-                System.out.println("You might wanna bring an umbrella and a light jacket.");
-            } else {
-                System.out.println("Something is very wrong, you should have listened when they warned about climate change.");
-            }
+            } else if (parseInt(temperature) >= 20 && parseInt(temperature) < 30) {
+                if (weatherCondition.equals("clear")) {
+                    System.out.println("You should be fine with just a shirt or a T-shirt.");
+                } else if (weatherCondition.equals("rain")) {
+                    System.out.println("You might wanna bring an umbrella and a light jacket.");
+                } else {
+                    System.out.println("Something is very wrong, you should have listened when they warned about climate change.");
+                }
 
-        } else if (parseInt(temperature) >= 10 && parseInt(temperature) < 20) {
-            if (weatherCondition.equals("clear") || weatherCondition.equals("rain")) {
-                System.out.println("Don't forget to wear a jacket or a coat.");
+            } else if (parseInt(temperature) >= 10 && parseInt(temperature) < 20) {
+                if (weatherCondition.equals("clear") || weatherCondition.equals("rain")) {
+                    System.out.println("Don't forget to wear a jacket or a coat.");
+                } else {
+                    System.out.println("This is quite unusual, but I suppose you'll be fine with a jacket or coat.");
+                }
+
             } else {
-                System.out.println("This is quite unusual, but I suppose you'll be fine with a jacket or coat.");
+                if (weatherCondition.equals("clear") || weatherCondition.equals("rain")) {
+                    System.out.println("It's quite cold outside, wear a heavy jacket or overcoat and maybe a scarf.");
+                } else {
+                    System.out.println("Go and make a snowman! But don't forget your scarf and a bonnet.");
+                }
+
             }
 
         } else {
-            if (weatherCondition.equals("clear") || weatherCondition.equals("rain")) {
-                System.out.println("It's quite cold outside, wear a heavy jacket or overcoat and maybe a scarf.");
-            } else {
-                System.out.println("Go and make a snowman! But don't forget your scarf and a bonnet.");
-            }
-
+            System.out.println("Please, enter a valid weather condition.");
         }
 
     }
